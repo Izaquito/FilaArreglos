@@ -33,11 +33,12 @@ using System.Text;
         if (String.IsNullOrWhiteSpace(_fila[_borrador]))
         {
             _borrador++;
+            Console.WriteLine("Esta parte de la fila está vacia");
 
         }
         else
         {
-            _fila[_borrador] = null;
+            _fila[_borrador] = String.Empty;
             _borrador++;
         }
 
