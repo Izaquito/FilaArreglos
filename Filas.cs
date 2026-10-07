@@ -26,7 +26,7 @@ using System.Text;
 
         public void Eliminar()
         {
-            if (_borrador == 5)
+            if (_borrador == _fila.Length)
             {
             throw new Exception("La fila esta vacia");
             }
