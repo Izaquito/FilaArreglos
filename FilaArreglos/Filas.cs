@@ -26,8 +26,16 @@ namespace FilaArreglos
             {
                 _tope = 0;
             }
-            _fila[_tope] = dato;
-            _tope++;
+            if (string.IsNullOrWhiteSpace(_fila[_tope]))
+            {
+                _fila[_tope] = dato;
+                _tope++;
+            }
+            else
+            {
+                throw new Exception("Elemento ya existe");
+                _tope++;
+            }
         }
         //aaa
         public void Eliminar()
