@@ -27,7 +27,7 @@ namespace FilaArreglos
             _fila[_tope] = dato;
             _tope++;
         }
-
+        ...
         public void Eliminar()
         {
             if (_eliminar == _tope)
