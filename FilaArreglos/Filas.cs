@@ -9,12 +9,14 @@ namespace FilaArreglos
         string[] _fila;
         int _tope;
         int _eliminar;
+        int _topefijo;
 
 
         public Filas(int elementos)
         {
             _fila = new string[elementos];
             _tope = 0;
+            _topefijo = _fila.Length;
             _eliminar = 0;
         }
 
@@ -22,7 +24,7 @@ namespace FilaArreglos
         {
             if (_tope == _fila.Length)
             {
-                throw new Exception("La fila esta llena");
+                _tope = 0;
             }
             _fila[_tope] = dato;
             _tope++;
@@ -30,9 +32,9 @@ namespace FilaArreglos
         //aaa
         public void Eliminar()
         {
-            if (_eliminar == _tope)
+            if (_eliminar == _topefijo)
             {
-                throw new Exception("La fila esta vacia");
+                _eliminar = 0;
             }
             _fila[_eliminar] = string.Empty;
             _eliminar++;
@@ -42,7 +44,7 @@ namespace FilaArreglos
         public string ObtenerDatos()
         {
             StringBuilder datos = new StringBuilder();
-            for (int i = 0; i < _tope; i++)
+            for (int i = 0; i < _topefijo; i++)
             {
                 datos.AppendLine(_fila[i]);
             }
